@@ -208,12 +208,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"9aab5f5a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DualListBox.vue?vue&type=template&id=3b6e83c8&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"list-box-wrapper"},[_c('div',[_c('ul',{staticClass:"list-box"},_vm._l((_vm.source),function(item,key){return _c('li',{key:key,staticClass:"list-item",style:({backgroundColor: item.selected ? '#eeeeee':''}),on:{"click":function($event){return _vm.selectSource(key)}}},[_vm._v(_vm._s(item.label))])}),0),_c('div',{staticClass:"bulk-action"},[_c('div',{staticClass:"btn-action select-all",on:{"click":_vm.selectAllSource}},[_vm._v("All")]),_c('div',{staticClass:"btn-action deselect-all",on:{"click":_vm.deSelectAllSource}},[_vm._v("None")])])]),_c('div',{staticClass:"actions"},[_c('div',{staticClass:"btn-action",on:{"click":_vm.moveDestination}},[_c('img',{attrs:{"src":_vm.angleRight,"height":"18"}})]),_c('div',{staticClass:"btn-action",on:{"click":_vm.moveAllDestination}},[_c('img',{attrs:{"src":_vm.angleDoubleRight,"height":"18"}})]),_c('div',{staticClass:"btn-action",on:{"click":_vm.moveSource}},[_c('img',{attrs:{"src":_vm.angleLeft,"height":"18"}})]),_c('div',{staticClass:"btn-action",on:{"click":_vm.moveAllSource}},[_c('img',{attrs:{"src":_vm.angleDoubleLeft,"height":"18"}})])]),_c('div',[_c('ul',{staticClass:"list-group list-group-flush border rounded list-box"},_vm._l((_vm.destination),function(item,key){return _c('li',{key:key,staticClass:"list-item",style:({backgroundColor: item.selected ? '#f5f5f5':''}),on:{"click":function($event){return _vm.selectDestination(key)}}},[_vm._v(_vm._s(item.label))])}),0),_c('div',{staticClass:"bulk-action"},[_c('div',{staticClass:"btn-action select-all",on:{"click":_vm.selectAllDestination}},[_vm._v("All")]),_c('div',{staticClass:"btn-action deselect-all",on:{"click":_vm.deSelectAllDestination}},[_vm._v("None")])])])])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"9aab5f5a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DualListBox.vue?vue&type=template&id=7346f057&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"list-box-wrapper"},[_c('div',[_c('ul',{staticClass:"list-box"},_vm._l((_vm.source),function(item,key){return _c('li',{key:key,staticClass:"list-item",style:({backgroundColor: item.selected ? '#eeeeee':''}),on:{"click":function($event){return _vm.selectSource(key)}}},[_vm._v(_vm._s(item.label))])}),0),_c('div',{staticClass:"bulk-action"},[_c('div',{staticClass:"btn-action select-all",on:{"click":_vm.selectAllSource}},[_vm._v("All")]),_c('div',{staticClass:"btn-action deselect-all",on:{"click":_vm.deSelectAllSource}},[_vm._v("None")])])]),_c('div',{staticClass:"actions"},[_c('div',{staticClass:"btn-action",on:{"click":_vm.moveDestination}},[_c('svg',{attrs:{"height":"18","viewBox":"0 0 256 512"}},[_c('path',{attrs:{"fill":"#ffffff","d":"M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"}})])]),_c('div',{staticClass:"btn-action",on:{"click":_vm.moveAllDestination}},[_c('svg',{attrs:{"height":"18","viewBox":"0 0 448 512"}},[_c('path',{attrs:{"fill":"#ffffff","d":"M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"}})])]),_c('div',{staticClass:"btn-action",on:{"click":_vm.moveSource}},[_c('svg',{attrs:{"height":"18","viewBox":"0 0 256 512"}},[_c('path',{attrs:{"fill":"#ffffff","d":"M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"}})])]),_c('div',{staticClass:"btn-action",on:{"click":_vm.moveAllSource}},[_c('svg',{attrs:{"height":"18","viewBox":"0 0 448 512"}},[_c('path',{attrs:{"fill":"#ffffff","d":"M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"}})])])]),_c('div',[_c('ul',{staticClass:"list-group list-group-flush border rounded list-box"},_vm._l((_vm.destination),function(item,key){return _c('li',{key:key,staticClass:"list-item",style:({backgroundColor: item.selected ? '#f5f5f5':''}),on:{"click":function($event){return _vm.selectDestination(key)}}},[_vm._v(_vm._s(item.label))])}),0),_c('div',{staticClass:"bulk-action"},[_c('div',{staticClass:"btn-action select-all",on:{"click":_vm.selectAllDestination}},[_vm._v("All")]),_c('div',{staticClass:"btn-action deselect-all",on:{"click":_vm.deSelectAllDestination}},[_vm._v("None")])])])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/DualListBox.vue?vue&type=template&id=3b6e83c8&
+// CONCATENATED MODULE: ./src/components/DualListBox.vue?vue&type=template&id=7346f057&
 
 // EXTERNAL MODULE: ./src/assets/angle-right-solid.svg
 var angle_right_solid = __webpack_require__("667a");
@@ -232,6 +232,26 @@ var angle_double_right_solid = __webpack_require__("3407");
 var angle_double_right_solid_default = /*#__PURE__*/__webpack_require__.n(angle_double_right_solid);
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DualListBox.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
