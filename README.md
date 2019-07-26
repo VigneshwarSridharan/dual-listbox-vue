@@ -4,6 +4,7 @@ Dual Listbox for vue js
 
 ![Dual listbox for vue js](https://raw.githubusercontent.com/VigneshwarSridharan/dual-listbox-vue/master/public/assets/images/screenshot.png)
 
+[DEMO](https://codesandbox.io/s/dual-plugin-eilhu)
 ### How to install
 
 ```
