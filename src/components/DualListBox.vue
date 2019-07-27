@@ -1,18 +1,31 @@
 <template>
   <div class="list-box-wrapper">
-    <div>
+    <div class="list-box-item">
+      <div class="search-box">
+        <input v-model="searchSource" type="text" placeholder="Search" />
+        <div
+          v-if="searchSource"
+          class="clear-search"
+          title="Clear Search"
+          @click=" searchSource='' "
+        >&times;</div>
+      </div>
       <ul class="list-box">
         <li
-          v-for="(item,key) in source"
+          v-for="(item,key) in source.filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchSource.toLowerCase()))"
           v-bind:key="key"
           class="list-item"
           v-bind:style="{backgroundColor: item.selected ? '#eeeeee':''}"
           @click="selectSource(key)"
-        >{{item.label}}</li>
+        >{{item[label in item ? label : 'label']}}</li>
+        <li
+          v-if="source.filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchSource.toLowerCase())).length == 0 && source.length"
+          class="list-item"
+        >No results found</li>
       </ul>
       <div class="bulk-action">
-        <div class="btn-action select-all" @click="selectAllSource">All</div>
-        <div class="btn-action deselect-all" @click="deSelectAllSource">None</div>
+        <div class="select-all" @click="selectAllSource">Select All</div>
+        <div class="deselect-all" @click="deSelectAllSource">None</div>
       </div>
     </div>
     <div class="actions">
@@ -49,19 +62,32 @@
         </svg>
       </div>
     </div>
-    <div>
+    <div class="list-box-item">
+      <div class="search-box">
+        <input v-model="searchDestination" type="text" placeholder="Search" />
+        <div
+          v-if="searchDestination"
+          class="clear-search"
+          title="Clear Search"
+          @click=" searchDestination='' "
+        >&times;</div>
+      </div>
       <ul class="list-group list-group-flush border rounded list-box">
         <li
-          v-for="(item,key) in destination"
+          v-for="(item,key) in destination.filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchDestination.toLowerCase()))"
           v-bind:key="key"
           class="list-item"
           v-bind:style="{backgroundColor: item.selected ? '#f5f5f5':''}"
           @click="selectDestination(key)"
-        >{{item.label}}</li>
+        >{{item[label in item ? label : 'label']}}</li>
+        <li
+          v-if="destination.filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchDestination.toLowerCase())).length == 0 && destination.length"
+          class="list-item"
+        >No results found</li>
       </ul>
       <div class="bulk-action">
-        <div class="btn-action select-all" @click="selectAllDestination">All</div>
-        <div class="btn-action deselect-all" @click="deSelectAllDestination">None</div>
+        <div class="select-all" @click="selectAllDestination">Select All</div>
+        <div class="deselect-all" @click="deSelectAllDestination">None</div>
       </div>
     </div>
   </div>
@@ -72,29 +98,36 @@ import angleRight from "../assets/angle-right-solid.svg";
 import angleLeft from "../assets/angle-left-solid.svg";
 import angleDoubleLeft from "../assets/angle-double-left-solid.svg";
 import angleDoubleRight from "../assets/angle-double-right-solid.svg";
+import "../assets/style.css";
 
 export default {
   props: {
     source: Array,
-    destination: Array
+    destination: Array,
+    label: String
   },
   data: function() {
     return {
       angleRight,
       angleLeft,
       angleDoubleLeft,
-      angleDoubleRight
+      angleDoubleRight,
+      searchSource: "",
+      searchDestination: ""
     };
   },
   methods: {
     moveDestination: function() {
       let selected = this.source.filter(f => f.selected);
+      if (!selected.length) return;
       selected = selected.map(item => ({
         ...item,
         selected: false
       }));
       let destination = [...selected, ...this.destination];
       let source = this.source.filter(f => !f.selected);
+      this.searchSource = "";
+      this.searchDestination = "";
       this.$emit("onChangeList", {
         source,
         destination
@@ -102,12 +135,15 @@ export default {
     },
     moveSource: function() {
       let selected = this.destination.filter(f => f.selected);
+      if (!selected.length) return;
       selected = selected.map(item => ({
         ...item,
         selected: false
       }));
       let source = [...selected, ...this.source];
       let destination = this.destination.filter(f => !f.selected);
+      this.searchSource = "";
+      this.searchDestination = "";
       this.$emit("onChangeList", {
         source,
         destination
@@ -119,6 +155,8 @@ export default {
         ...this.destination
       ];
       let source = [];
+      this.searchSource = "";
+      this.searchDestination = "";
       this.$emit("onChangeList", {
         source,
         destination
@@ -130,6 +168,8 @@ export default {
         ...this.source
       ];
       let destination = [];
+      this.searchSource = "";
+      this.searchDestination = "";
       this.$emit("onChangeList", {
         source,
         destination
@@ -202,90 +242,3 @@ export default {
   }
 };
 </script>
-
-<style>
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-.bulk-action {
-  display: flex;
-}
-.bulk-action .select-all {
-  margin-right: 0.5rem;
-}
-.bulk-action .deselect-all {
-  margin-left: 0.5rem;
-}
-
-.list-box-wrapper {
-  font-family: sans-serif;
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-.list-box-wrapper > div {
-  flex: 1;
-}
-.list-box-wrapper .actions {
-  flex-grow: 0;
-  padding: 0 1rem;
-}
-.list-box-wrapper .actions .btn-action {
-  margin-bottom: 0.5rem;
-}
-.list-box-wrapper .list-box {
-  height: 250px;
-  overflow: auto;
-  list-style: none;
-  padding: 0;
-  border: solid 1px #cccccc;
-  border-radius: 3px;
-}
-.list-box-wrapper .list-box .list-item {
-  padding: 0.5rem 1rem;
-  border-bottom: solid 1px #cccccc;
-  cursor: pointer;
-}
-.list-box-wrapper .list-box .list-item:last-child {
-  border: none;
-}
-
-.btn-action {
-  display: inline-block;
-  font-weight: 400;
-  color: #212529;
-  text-align: center;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: transparent;
-  border: 1px solid transparent;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  display: block;
-  width: 100%;
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-  cursor: pointer;
-}
-.btn-action svg {
-  vertical-align: middle;
-}
-
-.deselect-all {
-  background-color: #6c757d;
-  border-color: #6c757d;
-}
-</style>
-
-

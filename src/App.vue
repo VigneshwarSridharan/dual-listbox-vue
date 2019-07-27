@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <div class="container mt-3">
-      <DualListBox :source="source" :destination="destination" v-on:onChangeList="onChangeList"/>
+      <DualListBox
+        :source="source"
+        :destination="destination"
+        label="label"
+        @onChangeList="onChangeList"
+      />
       <div class="row">
         <div class="col-sm-6">
           <pre>{{source}}</pre>
@@ -43,5 +48,17 @@ export default {
 </script>
 
 <style>
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+.col-sm-6 {
+  padding: 0 1rem;
+  width: 100%;
+}
 </style>
 
