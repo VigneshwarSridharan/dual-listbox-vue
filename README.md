@@ -24,13 +24,13 @@ export default {
     data: function () {
         return {
             source: [
-                { label: "WHITE", code: "#FFFFFF" },
-                { label: "SILVER", code: "#C0C0C0" },
-                { label: "GRAY", code: "#808080" }
+                { name: "WHITE", code: "#FFFFFF" },
+                { name: "SILVER", code: "#C0C0C0" },
+                { name: "GRAY", code: "#808080" }
             ],
             destination: [
-                { label: "BLACK", code: "#000000" },
-                { label: "RED", code: "#FF0000" }
+                { name: "BLACK", code: "#000000" },
+                { name: "RED", code: "#FF0000" }
             ]
         };
     },
@@ -48,6 +48,7 @@ In HTML template
 <DualListBox
     :source="source" 
     :destination="destination"
-    v-on:onChangeList="onChangeList"
+    label="name"
+    @onChangeList="onChangeList"
 />
 ```

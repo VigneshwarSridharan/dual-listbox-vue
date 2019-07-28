@@ -87,17 +87,6 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "1311":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DualListBox_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("aa59");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DualListBox_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DualListBox_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DualListBox_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "27f1":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -119,7 +108,7 @@ module.exports = __webpack_require__.p + "img/angle-right-solid.eef567e9.svg";
 
 /***/ }),
 
-/***/ "aa59":
+/***/ "7d05":
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
@@ -199,12 +188,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"9aab5f5a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DualListBox.vue?vue&type=template&id=7346f057&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"list-box-wrapper"},[_c('div',[_c('ul',{staticClass:"list-box"},_vm._l((_vm.source),function(item,key){return _c('li',{key:key,staticClass:"list-item",style:({backgroundColor: item.selected ? '#eeeeee':''}),on:{"click":function($event){return _vm.selectSource(key)}}},[_vm._v(_vm._s(item.label))])}),0),_c('div',{staticClass:"bulk-action"},[_c('div',{staticClass:"btn-action select-all",on:{"click":_vm.selectAllSource}},[_vm._v("All")]),_c('div',{staticClass:"btn-action deselect-all",on:{"click":_vm.deSelectAllSource}},[_vm._v("None")])])]),_c('div',{staticClass:"actions"},[_c('div',{staticClass:"btn-action",on:{"click":_vm.moveDestination}},[_c('svg',{attrs:{"height":"18","viewBox":"0 0 256 512"}},[_c('path',{attrs:{"fill":"#ffffff","d":"M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"}})])]),_c('div',{staticClass:"btn-action",on:{"click":_vm.moveAllDestination}},[_c('svg',{attrs:{"height":"18","viewBox":"0 0 448 512"}},[_c('path',{attrs:{"fill":"#ffffff","d":"M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"}})])]),_c('div',{staticClass:"btn-action",on:{"click":_vm.moveSource}},[_c('svg',{attrs:{"height":"18","viewBox":"0 0 256 512"}},[_c('path',{attrs:{"fill":"#ffffff","d":"M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"}})])]),_c('div',{staticClass:"btn-action",on:{"click":_vm.moveAllSource}},[_c('svg',{attrs:{"height":"18","viewBox":"0 0 448 512"}},[_c('path',{attrs:{"fill":"#ffffff","d":"M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"}})])])]),_c('div',[_c('ul',{staticClass:"list-group list-group-flush border rounded list-box"},_vm._l((_vm.destination),function(item,key){return _c('li',{key:key,staticClass:"list-item",style:({backgroundColor: item.selected ? '#f5f5f5':''}),on:{"click":function($event){return _vm.selectDestination(key)}}},[_vm._v(_vm._s(item.label))])}),0),_c('div',{staticClass:"bulk-action"},[_c('div',{staticClass:"btn-action select-all",on:{"click":_vm.selectAllDestination}},[_vm._v("All")]),_c('div',{staticClass:"btn-action deselect-all",on:{"click":_vm.deSelectAllDestination}},[_vm._v("None")])])])])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"9aab5f5a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DualListBox.vue?vue&type=template&id=111762a4&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"list-box-wrapper"},[_c('div',{staticClass:"list-box-item"},[_c('div',{staticClass:"search-box"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.searchSource),expression:"searchSource"}],attrs:{"type":"text","placeholder":"Search"},domProps:{"value":(_vm.searchSource)},on:{"input":function($event){if($event.target.composing){ return; }_vm.searchSource=$event.target.value}}}),(_vm.searchSource)?_c('div',{staticClass:"clear-search",attrs:{"title":"Clear Search"},on:{"click":function($event){_vm.searchSource=''}}},[_vm._v("×")]):_vm._e()]),_c('ul',{staticClass:"list-box"},[_vm._l((_vm.source.filter(function (item) { return item[_vm.label in item ? _vm.label : 'label'].toLowerCase().includes(_vm.searchSource.toLowerCase()); })),function(item,key){return _c('li',{key:key,staticClass:"list-item",style:({backgroundColor: item.selected ? '#eeeeee':''}),on:{"click":function($event){return _vm.selectSource(key)}}},[_vm._v(_vm._s(item[_vm.label in item ? _vm.label : 'label']))])}),(_vm.source.filter(function (item) { return item[_vm.label in item ? _vm.label : 'label'].toLowerCase().includes(_vm.searchSource.toLowerCase()); }).length == 0 && _vm.source.length)?_c('li',{staticClass:"list-item"},[_vm._v("No results found")]):_vm._e()],2),_c('div',{staticClass:"bulk-action"},[_c('div',{staticClass:"select-all",on:{"click":_vm.selectAllSource}},[_vm._v("Select All")]),_c('div',{staticClass:"deselect-all",on:{"click":_vm.deSelectAllSource}},[_vm._v("None")])])]),_c('div',{staticClass:"actions"},[_c('div',{staticClass:"btn-action",on:{"click":_vm.moveDestination}},[_c('svg',{attrs:{"height":"18","viewBox":"0 0 256 512"}},[_c('path',{attrs:{"fill":"#ffffff","d":"M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"}})])]),_c('div',{staticClass:"btn-action",on:{"click":_vm.moveAllDestination}},[_c('svg',{attrs:{"height":"18","viewBox":"0 0 448 512"}},[_c('path',{attrs:{"fill":"#ffffff","d":"M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"}})])]),_c('div',{staticClass:"btn-action",on:{"click":_vm.moveSource}},[_c('svg',{attrs:{"height":"18","viewBox":"0 0 256 512"}},[_c('path',{attrs:{"fill":"#ffffff","d":"M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"}})])]),_c('div',{staticClass:"btn-action",on:{"click":_vm.moveAllSource}},[_c('svg',{attrs:{"height":"18","viewBox":"0 0 448 512"}},[_c('path',{attrs:{"fill":"#ffffff","d":"M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"}})])])]),_c('div',{staticClass:"list-box-item"},[_c('div',{staticClass:"search-box"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.searchDestination),expression:"searchDestination"}],attrs:{"type":"text","placeholder":"Search"},domProps:{"value":(_vm.searchDestination)},on:{"input":function($event){if($event.target.composing){ return; }_vm.searchDestination=$event.target.value}}}),(_vm.searchDestination)?_c('div',{staticClass:"clear-search",attrs:{"title":"Clear Search"},on:{"click":function($event){_vm.searchDestination=''}}},[_vm._v("×")]):_vm._e()]),_c('ul',{staticClass:"list-group list-group-flush border rounded list-box"},[_vm._l((_vm.destination.filter(function (item) { return item[_vm.label in item ? _vm.label : 'label'].toLowerCase().includes(_vm.searchDestination.toLowerCase()); })),function(item,key){return _c('li',{key:key,staticClass:"list-item",style:({backgroundColor: item.selected ? '#f5f5f5':''}),on:{"click":function($event){return _vm.selectDestination(key)}}},[_vm._v(_vm._s(item[_vm.label in item ? _vm.label : 'label']))])}),(_vm.destination.filter(function (item) { return item[_vm.label in item ? _vm.label : 'label'].toLowerCase().includes(_vm.searchDestination.toLowerCase()); }).length == 0 && _vm.destination.length)?_c('li',{staticClass:"list-item"},[_vm._v("No results found")]):_vm._e()],2),_c('div',{staticClass:"bulk-action"},[_c('div',{staticClass:"select-all",on:{"click":_vm.selectAllDestination}},[_vm._v("Select All")]),_c('div',{staticClass:"deselect-all",on:{"click":_vm.deSelectAllDestination}},[_vm._v("None")])])])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/DualListBox.vue?vue&type=template&id=7346f057&
+// CONCATENATED MODULE: ./src/components/DualListBox.vue?vue&type=template&id=111762a4&
 
 // EXTERNAL MODULE: ./src/assets/angle-right-solid.svg
 var angle_right_solid = __webpack_require__("667a");
@@ -221,6 +210,9 @@ var angle_double_left_solid_default = /*#__PURE__*/__webpack_require__.n(angle_d
 // EXTERNAL MODULE: ./src/assets/angle-double-right-solid.svg
 var angle_double_right_solid = __webpack_require__("3407");
 var angle_double_right_solid_default = /*#__PURE__*/__webpack_require__.n(angle_double_right_solid);
+
+// EXTERNAL MODULE: ./src/assets/style.css
+var style = __webpack_require__("7d05");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DualListBox.vue?vue&type=script&lang=js&
 //
@@ -292,6 +284,33 @@ var angle_double_right_solid_default = /*#__PURE__*/__webpack_require__.n(angle_
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -299,24 +318,30 @@ var angle_double_right_solid_default = /*#__PURE__*/__webpack_require__.n(angle_
 /* harmony default export */ var DualListBoxvue_type_script_lang_js_ = ({
   props: {
     source: Array,
-    destination: Array
+    destination: Array,
+    label: String
   },
   data: function () {
     return {
       angleRight: angle_right_solid_default.a,
       angleLeft: angle_left_solid_default.a,
       angleDoubleLeft: angle_double_left_solid_default.a,
-      angleDoubleRight: angle_double_right_solid_default.a
+      angleDoubleRight: angle_double_right_solid_default.a,
+      searchSource: "",
+      searchDestination: ""
     };
   },
   methods: {
     moveDestination: function () {
       let selected = this.source.filter(f => f.selected);
+      if (!selected.length) return;
       selected = selected.map(item => ({ ...item,
         selected: false
       }));
       let destination = [...selected, ...this.destination];
       let source = this.source.filter(f => !f.selected);
+      this.searchSource = "";
+      this.searchDestination = "";
       this.$emit("onChangeList", {
         source,
         destination
@@ -324,11 +349,14 @@ var angle_double_right_solid_default = /*#__PURE__*/__webpack_require__.n(angle_
     },
     moveSource: function () {
       let selected = this.destination.filter(f => f.selected);
+      if (!selected.length) return;
       selected = selected.map(item => ({ ...item,
         selected: false
       }));
       let source = [...selected, ...this.source];
       let destination = this.destination.filter(f => !f.selected);
+      this.searchSource = "";
+      this.searchDestination = "";
       this.$emit("onChangeList", {
         source,
         destination
@@ -339,6 +367,8 @@ var angle_double_right_solid_default = /*#__PURE__*/__webpack_require__.n(angle_
         selected: false
       })), ...this.destination];
       let source = [];
+      this.searchSource = "";
+      this.searchDestination = "";
       this.$emit("onChangeList", {
         source,
         destination
@@ -349,6 +379,8 @@ var angle_double_right_solid_default = /*#__PURE__*/__webpack_require__.n(angle_
         selected: false
       })), ...this.source];
       let destination = [];
+      this.searchSource = "";
+      this.searchDestination = "";
       this.$emit("onChangeList", {
         source,
         destination
@@ -426,9 +458,6 @@ var angle_double_right_solid_default = /*#__PURE__*/__webpack_require__.n(angle_
 });
 // CONCATENATED MODULE: ./src/components/DualListBox.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_DualListBoxvue_type_script_lang_js_ = (DualListBoxvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/components/DualListBox.vue?vue&type=style&index=0&lang=css&
-var DualListBoxvue_type_style_index_0_lang_css_ = __webpack_require__("1311");
-
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 /* globals __VUE_SSR_CONTEXT__ */
 
@@ -525,7 +554,6 @@ function normalizeComponent (
 }
 
 // CONCATENATED MODULE: ./src/components/DualListBox.vue
-
 
 
 
