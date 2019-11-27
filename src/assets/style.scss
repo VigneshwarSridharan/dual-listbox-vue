@@ -45,6 +45,9 @@
         // &:last-child {
         //   border: none;
         // }
+        &.active {
+          background-color: #eeeeee;
+        }
       }
     }
     .bulk-action {

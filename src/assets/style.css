@@ -47,6 +47,9 @@
   border-bottom: solid 1px #cccccc;
   cursor: pointer;
 }
+.list-box-wrapper .list-box-item .list-box .list-item.active {
+  background-color: #eeeeee;
+}
 .list-box-wrapper .list-box-item .bulk-action {
   display: flex;
   border-top: solid 1px #cccccc;

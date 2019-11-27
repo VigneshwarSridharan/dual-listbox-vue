@@ -14,8 +14,7 @@
         <li
           v-for="(item,key) in source.map((item,inx) => ({inx,...item})).filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchSource.toLowerCase()))"
           v-bind:key="key"
-          class="list-item"
-          v-bind:style="{backgroundColor: item.selected ? '#eeeeee':''}"
+          :class="'list-item'+ (item.selected ? ' active':'')"
           @click="selectSource(searchSource?item.inx:key)"
         >{{item[label in item ? label : 'label']}}</li>
         <li
@@ -76,8 +75,7 @@
         <li
           v-for="(item,key) in destination.map((item,inx) => ({inx,...item})).filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchDestination.toLowerCase()))"
           v-bind:key="key"
-          class="list-item"
-          v-bind:style="{backgroundColor: item.selected ? '#f5f5f5':''}"
+          :class="'list-item'+ (item.selected ? ' active':'')"
           @click="selectDestination(searchDestination?item.inx:key)"
         >{{item[label in item ? label : 'label']}}</li>
         <li
