@@ -7,7 +7,7 @@ Dual Listbox for vue js
 [DEMO](https://codesandbox.io/s/dual-plugin-eilhu)
 ### How to install
 
-```
+```bash
 npm install dual-listbox-vue --save
 ```
 

@@ -12,11 +12,11 @@
       </div>
       <ul class="list-box">
         <li
-          v-for="(item,key) in source.filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchSource.toLowerCase()))"
+          v-for="(item,key) in source.map((item,inx) => ({inx,...item})).filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchSource.toLowerCase()))"
           v-bind:key="key"
           class="list-item"
           v-bind:style="{backgroundColor: item.selected ? '#eeeeee':''}"
-          @click="selectSource(key)"
+          @click="selectSource(searchSource?item.inx:key)"
         >{{item[label in item ? label : 'label']}}</li>
         <li
           v-if="source.filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchSource.toLowerCase())).length == 0 && source.length"
@@ -74,11 +74,11 @@
       </div>
       <ul class="list-group list-group-flush border rounded list-box">
         <li
-          v-for="(item,key) in destination.filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchDestination.toLowerCase()))"
+          v-for="(item,key) in destination.map((item,inx) => ({inx,...item})).filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchDestination.toLowerCase()))"
           v-bind:key="key"
           class="list-item"
           v-bind:style="{backgroundColor: item.selected ? '#f5f5f5':''}"
-          @click="selectDestination(key)"
+          @click="selectDestination(searchDestination?item.inx:key)"
         >{{item[label in item ? label : 'label']}}</li>
         <li
           v-if="destination.filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchDestination.toLowerCase())).length == 0 && destination.length"
