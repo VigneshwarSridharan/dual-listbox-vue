@@ -1,91 +1,92 @@
 <template>
   <div class="list-box-wrapper">
+
+
     <div class="list-box-item">
-      <div class="search-box">
-        <input v-model="searchSource" type="text" placeholder="Search" />
-        <div
-          v-if="searchSource"
-          class="clear-search"
-          title="Clear Search"
-          @click=" searchSource='' "
-        >&times;</div>
-      </div>
-      <ul class="list-box">
-        <li
-          v-for="(item,key) in source.map((item,inx) => ({inx,...item})).filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchSource.toLowerCase()))"
-          v-bind:key="key"
-          :class="'list-item'+ (item.selected ? ' active':'')"
-          @click="selectSource(searchSource?item.inx:key)"
-        >{{item[label in item ? label : 'label']}}</li>
-        <li
-          v-if="source.filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchSource.toLowerCase())).length == 0 && source.length"
-          class="list-item"
-        >No results found</li>
-      </ul>
+      
+      <md-field md-clearable class="search">
+        <label>Search</label>
+        <md-input v-model="searchSource"></md-input>
+      </md-field>
+
+      <md-content class="md-scrollbar">
+        <md-list>
+          <md-list-item
+            v-for="(item,key) in source.map((item,inx) => ({inx,...item})).filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchSource.toLowerCase()))"
+            v-bind:key="key"
+            :class="(item.selected ? 'active':'')"
+            @click="selectSource(searchSource?item.inx:key)"
+            >
+              <md-icon v-if="'icon' in item">{{item['icon']}}</md-icon>
+              <md-avatar v-if="'avatar' in item">
+                <img :src="item['avatar']" alt="People">
+              </md-avatar>
+              <span :class="(item.avatar || item.icon ? 'md-list-item-text':'')" v-if="asHtml" v-html="item[label in item ? label : 'label']"></span>
+              <span :class="(item.avatar || item.icon ? 'md-list-item-text':'')" v-else>{{item[label in item ? label : 'label']}}</span>
+            </md-list-item>
+          <md-list-item
+            v-if="source.filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchSource.toLowerCase())).length == 0 && source.length"
+          >No results found</md-list-item>
+        </md-list>
+      </md-content>
+
       <div class="bulk-action">
-        <div class="select-all" @click="selectAllSource">Select All</div>
-        <div class="deselect-all" @click="deSelectAllSource">None</div>
+        <md-button class="md-raised md-primary width-100 no-margin" @click="selectAllSource">Select All</md-button>
+        <md-button class="md-raised width-100 no-margin" @click="deSelectAllSource">None</md-button>
       </div>
     </div>
     <div class="actions">
-      <div class="btn-action" @click="moveDestination">
-        <svg height="18" viewBox="0 0 256 512">
-          <path
-            fill="#ffffff"
-            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
-          />
-        </svg>
-      </div>
-      <div class="btn-action" @click="moveAllDestination">
-        <svg height="18" viewBox="0 0 448 512">
-          <path
-            fill="#ffffff"
-            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
-          />
-        </svg>
-      </div>
-      <div class="btn-action" @click="moveSource">
-        <svg height="18" viewBox="0 0 256 512">
-          <path
-            fill="#ffffff"
-            d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
-          />
-        </svg>
-      </div>
-      <div class="btn-action" @click="moveAllSource">
-        <svg height="18" viewBox="0 0 448 512">
-          <path
-            fill="#ffffff"
-            d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
-          />
-        </svg>
-      </div>
+
+      <md-button class="btn-action md-fab md-primary" @click="moveDestination">
+          <md-icon>keyboard_arrow_right</md-icon>
+      </md-button>
+
+      <md-button class="btn-action md-fab md-primary" @click="moveAllDestination">
+          <md-icon>fast_forward</md-icon>
+      </md-button>
+      
+      <md-button class="btn-action md-fab md-primary" @click="moveSource">
+          <md-icon>keyboard_arrow_left</md-icon>
+      </md-button>
+
+       <md-button class="btn-action md-fab md-primary" @click="moveAllSource">
+          <md-icon>fast_rewind</md-icon>
+      </md-button>
+
+      
     </div>
     <div class="list-box-item">
-      <div class="search-box">
-        <input v-model="searchDestination" type="text" placeholder="Search" />
-        <div
-          v-if="searchDestination"
-          class="clear-search"
-          title="Clear Search"
-          @click=" searchDestination='' "
-        >&times;</div>
-      </div>
-      <ul class="list-group list-group-flush border rounded list-box">
-        <li
-          v-for="(item,key) in destination.map((item,inx) => ({inx,...item})).filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchDestination.toLowerCase()))"
-          v-bind:key="key"
-          :class="'list-item'+ (item.selected ? ' active':'')"
-          @click="selectDestination(searchDestination?item.inx:key)"
-        >{{item[label in item ? label : 'label']}}</li>
-        <li
+
+      <md-field md-clearable class="search">
+        <label>Search</label>
+        <md-input v-model="searchDestination"></md-input>
+      </md-field>
+
+      <md-content class="md-scrollbar">
+        <md-list>
+          <md-list-item
+            v-for="(item,key) in destination.map((item,inx) => ({inx,...item})).filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchDestination.toLowerCase()))"
+            v-bind:key="key"
+            :class="(item.selected ? ' active':'')"
+            @click="selectDestination(searchDestination?item.inx:key)"
+          >
+              <md-icon v-if="'icon' in item">{{item['icon']}}</md-icon>
+              <md-avatar v-if="'avatar' in item">
+                <img :src="item['avatar']" alt="People">
+              </md-avatar>
+              <span :class="(item.avatar || item.icon ? 'md-list-item-text':'')" v-if="asHtml" v-html="item[label in item ? label : 'label']"></span>
+              <span :class="(item.avatar || item.icon ? 'md-list-item-text':'')" v-else>{{item[label in item ? label : 'label']}}</span>
+          </md-list-item>
+        </md-list>
+        <md-list-item
           v-if="destination.filter(item => item[label in item ? label : 'label'].toLowerCase().includes(searchDestination.toLowerCase())).length == 0 && destination.length"
           class="list-item"
-        >No results found</li>
-      </ul>
+        >No results found</md-list-item>
+      </md-content>
+
       <div class="bulk-action">
-        <div class="select-all" @click="selectAllDestination">Select All</div>
-        <div class="deselect-all" @click="deSelectAllDestination">None</div>
+        <md-button class="md-raised md-primary width-100 no-margin" @click="selectAllDestination">Select All</md-button>
+        <md-button class="md-raised width-100 no-margin" @click="deSelectAllDestination">None</md-button>
       </div>
     </div>
   </div>
@@ -102,7 +103,8 @@ export default {
   props: {
     source: Array,
     destination: Array,
-    label: String
+    label: String,
+    asHtml: Boolean
   },
   data: function() {
     return {
@@ -240,3 +242,47 @@ export default {
   }
 };
 </script>
+
+<style lang="css" scoped>
+
+  .actions .md-button {
+
+    margin: 6px 8px !important;
+
+  }
+
+  .md-content {
+    height: 350px;
+    overflow: auto;
+  }
+
+  .search {
+
+    margin: 0px !important;
+  }
+
+  .search label {
+
+    left: 16px;
+  }
+
+  .search input {
+
+    padding-left: 16px;
+  }
+
+  .active {
+    background-color: rgba(0,0,0,0.20);
+  }
+
+  .width-100 {
+
+    width: 100%;
+  }
+
+  .no-margin {
+
+    margin: 0px !important;
+  }
+
+</style>
