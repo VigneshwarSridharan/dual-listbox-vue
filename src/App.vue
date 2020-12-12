@@ -2,6 +2,7 @@
   <div id="app">
     <div class="container mt-3">
       <DualListBox
+        :asHtml="true"
         :source="source"
         :destination="destination"
         label="label"
