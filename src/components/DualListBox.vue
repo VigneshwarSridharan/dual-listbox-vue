@@ -2,7 +2,7 @@
   <div class="list-box-wrapper">
     <div class="list-box-item">
       <div class="search-box">
-        <input v-model="searchSource" type="text" placeholder="Search" />
+        <input v-model="searchSource" type="text" placeholder="Procurar" />
         <div
           v-if="searchSource"
           class="clear-search"
@@ -23,8 +23,8 @@
         >No results found</li>
       </ul>
       <div class="bulk-action">
-        <div class="select-all" @click="selectAllSource">Select All</div>
-        <div class="deselect-all" @click="deSelectAllSource">None</div>
+        <div class="select-all" @click="selectAllSource">Selecionar todos</div>
+        <div class="deselect-all" @click="deSelectAllSource">Retirar Seleções</div>
       </div>
     </div>
     <div class="actions">
@@ -63,7 +63,7 @@
     </div>
     <div class="list-box-item">
       <div class="search-box">
-        <input v-model="searchDestination" type="text" placeholder="Search" />
+        <input v-model="searchDestination" type="text" placeholder="Procurar" />
         <div
           v-if="searchDestination"
           class="clear-search"
@@ -84,8 +84,8 @@
         >No results found</li>
       </ul>
       <div class="bulk-action">
-        <div class="select-all" @click="selectAllDestination">Select All</div>
-        <div class="deselect-all" @click="deSelectAllDestination">None</div>
+        <div class="select-all" @click="selectAllDestination">Selecionar Todos</div>
+        <div class="deselect-all" @click="deSelectAllDestination">Retirar Seleções</div>
       </div>
     </div>
   </div>
